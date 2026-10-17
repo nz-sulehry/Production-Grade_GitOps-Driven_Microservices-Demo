@@ -198,3 +198,4 @@ if __name__ == '__main__':
       logger.warn(f"Exception on Cloud Trace setup: {traceback.format_exc()}, tracing disabled.") 
   
   start(dummy_mode = True)
+# CI trigger test
