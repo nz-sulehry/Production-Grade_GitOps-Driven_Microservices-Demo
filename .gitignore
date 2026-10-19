@@ -28,3 +28,10 @@ release/wi-kubernetes-manifests.yaml
 vendor/
 *.pem
 .terraform
+
+# Terraform secrets and state
+*.pem
+*.tfstate
+*.tfstate.*
+.terraform/
+tfplan
