@@ -1,3 +1,4 @@
+
 # Copyright 2024 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -90,10 +91,14 @@ spec:
           value: "1"
         {{- end }}
         readinessProbe:
+          initialDelaySeconds: 15
+          timeoutSeconds: 5
           periodSeconds: 5
           grpc:
             port: 8080
         livenessProbe:
+          initialDelaySeconds: 30
+          timeoutSeconds: 5
           periodSeconds: 5
           grpc:
             port: 8080
@@ -188,3 +193,4 @@ spec:
         - "8080"
 {{- end }}
 {{- end }}
+

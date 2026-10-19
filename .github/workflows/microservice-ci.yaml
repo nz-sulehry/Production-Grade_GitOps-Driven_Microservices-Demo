@@ -41,7 +41,7 @@ jobs:
       # -------------------
       - name: Build Image
         run: |
-          docker build \
+          docker buildx build --load \
             --cache-from=type=gha \
             --cache-to=type=gha,mode=max \
             -t $IMAGE_NAME \

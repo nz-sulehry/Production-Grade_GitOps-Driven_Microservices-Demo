@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-FROM --platform=$BUILDPLATFORM python:3.14.2-alpine@sha256:7af51ebeb83610fb69d633d5c61a2efb87efa4caf66b59862d624bb6ef788345 AS base
+FROM --platform=$BUILDPLATFORM python:3.14.8-alpine3.24@sha256:f6a589d43c42b9e7f7dc67a12d37132491f362859a5d750607710cc56da3bc72 AS base
 
 FROM base AS builder
 
@@ -25,6 +25,7 @@ RUN apk update \
 
 # get packages
 COPY requirements.txt .
+RUN python -m pip install --no-cache-dir --upgrade pip==26.1.2
 RUN pip install -r requirements.txt
 
 FROM base
